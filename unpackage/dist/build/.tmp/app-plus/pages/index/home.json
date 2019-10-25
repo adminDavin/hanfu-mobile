@@ -1,0 +1,8 @@
+{
+  "titleNView": false,
+  "softinputNavBar": "none",
+  "usingComponents": {
+    "goods-list": "/components/goodsList/goodslist",
+    "uni-load-more": "/components/uni-load-more/uni-load-more"
+  }
+}

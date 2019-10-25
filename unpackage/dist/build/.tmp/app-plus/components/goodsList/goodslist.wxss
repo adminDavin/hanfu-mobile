@@ -1,0 +1,80 @@
+.goods-wrapper.data-v-48723675 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-flow: wrap;
+      -ms-flex-flow: wrap;
+          flex-flow: wrap;
+}
+.goods-wrapper .goods-item.data-v-48723675 {
+  width: 48%;
+  background-color: #fff;
+  overflow: hidden;
+  margin-bottom: 30rpx;
+}
+.goods-wrapper .goods-item.data-v-48723675:nth-last-child(1),
+.goods-wrapper .goods-item.data-v-48723675:nth-last-child(2) {
+  margin-bottom: 0;
+}
+.goods-wrapper .goods-item .goodsImg.data-v-48723675 {
+  height: 300rpx;
+}
+.goods-wrapper .goods-item .goodsImg .goods-img.data-v-48723675 {
+  width: 100%;
+  height: 300rpx;
+}
+.goods-wrapper .goods-item .goodsTitle.data-v-48723675 {
+  color: #333;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  padding: 0 20rpx;
+  overflow: hidden;
+  font-size: 26rpx;
+  line-height: 35rpx;
+  margin-top: 21rpx;
+  margin: 0;
+}
+.goods-wrapper .goods-item .goodsPrice.data-v-48723675 {
+  margin-top: 10rpx;
+  height: 50rpx;
+  margin-bottom: 30rpx;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 26rpx;
+}
+.goods-wrapper .goods-item .goodsPrice .price.data-v-48723675 {
+  color: #e65339;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.goods-wrapper .goods-item .goodsPrice .buyNum.data-v-48723675 {
+  color: #807c87;
+  font-size: 24rpx;
+}
+
