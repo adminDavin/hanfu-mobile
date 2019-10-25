@@ -323,33 +323,57 @@
 			buy:function(){
 				var main=this;
 				console.log(url.url+"order/creat");
+				let fd = new FormData();
+				fd.append('userId', 1);
+				fd.append('userAddressId', 1);
+				fd.append('logisticsOrderName','1');
+				fd.append('logisticsCompany', '1');
+				fd.append('hfDesc', "1");
+				fd.append('id', "1");				
+				fd.append('orderDetailStatus','1');
+				fd.append('hfTax',"1");
+				fd.append('purchasePrice',1);
+				fd.append('purchaseQuantity', 1);				
+				fd.append('distribution', "1");
+				fd.append('payStatusorderType', "1");
+				fd.append('amount', "1");				
+				fd.append('hfMemo', "1");
+				fd.append('hfRemark', "1");
+				fd.append('payMethodName', "1");
+				fd.append('googsId', 3);
+				fd.append('respId', 3);
+				fd.append('logisticsOrdersId', "1");				
+				// fd.append('hfName', params.hfName);
+				// return Axios.post("/api/product/addproduct", fd, { responseType: 'arraybuffer' });
 				uni.request({
 				        url:url.url+"order/creat",
-						method:'get',
+						method:'post',
 					    dataType: "JSON",
-						data:{	
-							userId :1,
-							userAddressId:1,
-							googsId :3,
-							logisticsOrderName :'1',
-							respId :3,
-							logisticsOrdersId :"1",
-							logisticsCompany  :'1',
-							hfDesc :"1",
-							id :"1",
-							orderDetailStatus :'1',
-							hfTax :"1",
-							purchasePrice:1,
-							purchaseQuantity :1,
-							distribution :"1",
-							hfDesc :'1',
-							payStatusorderType :"1",
-							amount  :"1",
-							hfMemo  :"1",
-							hfRemark  :"1",
-							payMethodName:"1",
+						responseType: 'arraybuffer',
+						params:fd,
+						// {	
+						// 	uuserId :57,
+						// 	userAddressId:1,
+						// 	googsId :3,
+						// 	logisticsOrderName :'1',
+						// 	respId :3,
+						// 	logisticsOrdersId :"1",
+						// 	logisticsCompany  :'1',
+						// 	hfDesc :"1",
+						// 	id :"1",
+						// 	orderDetailStatus :'1',
+						// 	hfTax :"1",
+						// 	purchasePrice:1,
+						// 	purchaseQuantity :1,
+						// 	distribution :"1",
+						// 	hfDesc :'1',
+						// 	payStatusorderType :"1",
+						// 	amount  :"1",
+						// 	hfMemo  :"1",
+						// 	hfRemark  :"1",
+						// 	payMethodName:"1",
 							
-						},
+						// },
 					    success: function(res) {
 							console.log("提交订单1",res);							
 							main.orderId=res.data.data[1].ordersId;
@@ -357,7 +381,7 @@
 							if(res.statusCode==200){
 								uni.request({
 								        url:url.urlPay+"payment/pay",
-										method:'get',
+										method:'post',
 									    dataType: "JSON",
 										data:{	
 											orderId:main.orderId,
@@ -373,10 +397,8 @@
 									    }
 								
 								})
-							}
-							
-					    }
-				
+							}							
+					    }				
 				})
 			},
 			tosearch: function() {
