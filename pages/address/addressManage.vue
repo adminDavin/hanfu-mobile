@@ -155,10 +155,8 @@
 				// uni.showLoading({
 				// 	title:'请稍等...'
 				// })
-				
-				
 				uni.request({
-			            url:url.url+"user/address/addAddress",
+			            url:url.urlAdress+"user/address/addAddress",
 						method:'get',
 					    dataType: "JSON",
 						data:{

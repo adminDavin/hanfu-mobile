@@ -87,7 +87,7 @@
 			Nulla congue augue eu odio pretium, nec consectetur orci blandit. Proin vitae malesuada purus. Nam eu ante in tortor
 			condimentum tempor. Proin tincidunt facilisis lorem sed facilisis. Quisque ut semper nulla, a facilisis nibh.
 		</view>
-		
+
 		<view style="display: flex;">
 			<view style="display: flex;align-items: center;width: 30%;justify-content: space-around;">
 				<view style="display: flex;flex-direction: column;align-items: center;">
@@ -101,65 +101,66 @@
 			</view>
 			<view style="display: flex;align-items: center;width: 70%;">
 				<view style="height:100upx;background:rgba(247,151,54,1);flex:1;display: flex;align-items: center;justify-content: center;color: #fff;">放入购物车</view>
-				<view @click="buy"  style="height:100upx;background:#F73636;flex:1;display: flex;align-items: center;justify-content: center;color: #fff;">立即购买</view>
+				<view @click="buy" style="height:100upx;background:#F73636;flex:1;display: flex;align-items: center;justify-content: center;color: #fff;">立即购买</view>
 			</view>
 		</view>
 		<!-- 服务保障弹窗 -->
-	    <view style="width: 100%;height: 100%;position: fixed;top: 0;left: 0;background: rgba(0,0,0,0.5);z-index: 100;" v-if="false">
-			<view style="position: absolute;background: #fff;padding-top: 41upx;width: 100%;bottom: 0;">	
-			     <view style="text-align: center;font-size: 32upx;font-weight: bold;">服务保障</view>
-				 <view style="display: flex;align-items: center;padding: 29upx 0 ;border-bottom:1upx solid #eee;padding-left: 62upx;">
-				 	<view style="width: 44upx;height: 44upx;border-radius: 50%; color:#F73636;border:1upx solid #F73636;display: flex;align-items: center;justify-content: center;">
-				 		7
-				 	</view>
-				 	<view style="margin-left: 32upx;">
-				 		<view>
-				 			七天包退
-				 		</view>
-				 		<view style="color: #999999;">
-				 			购买后七天内无条件退款
-				 		</view>
-				 	</view>
-				 </view>
-				 <view style="display: flex;align-items: center;padding: 29upx 0 ;border-bottom:1upx solid #eee;padding-left: 62upx;">
-				 	<view style="width: 44upx;height: 44upx;border-radius: 50%; color:#F73636;border:1upx solid #F73636;display: flex;align-items: center;justify-content: center;">
-				 		7
-				 	</view>
-				 	<view style="margin-left: 32upx;">
-				 		<view>
-				 			七天包退
-				 		</view>
-				 		<view style="color: #999999;">
-				 			购买后七天内无条件退款
-				 		</view>
-				 	</view>
-				 </view>
-				 <view style="display: flex;align-items: center; padding: 29upx 0 ;border-bottom:1upx solid #eee;padding-left: 62upx;">
-				 	<view style="width: 44upx;height: 44upx;border-radius: 50%; color:#F73636;border:1upx solid #F73636;display: flex;align-items: center;justify-content: center;">
-				 		7
-				 	</view>
-				 	<view style="margin-left: 32upx;">
-				 		<view>
-				 			七天包退
-				 		</view>
-				 		<view style="color: #999999;">
-				 			购买后七天内无条件退款
-				 		</view>
-				 	</view>
-				 </view>
-				 <view style= "font-size: 23upx; width: 100%;height: 100upx;background: #F73636;display: flex;align-items: center;justify-content: center;color: #fff;">
-					 确定
-				 </view>
+		<view style="width: 100%;height: 100%;position: fixed;top: 0;left: 0;background: rgba(0,0,0,0.5);z-index: 100;" v-if="false">
+			<view style="position: absolute;background: #fff;padding-top: 41upx;width: 100%;bottom: 0;">
+				<view style="text-align: center;font-size: 32upx;font-weight: bold;">服务保障</view>
+				<view style="display: flex;align-items: center;padding: 29upx 0 ;border-bottom:1upx solid #eee;padding-left: 62upx;">
+					<view style="width: 44upx;height: 44upx;border-radius: 50%; color:#F73636;border:1upx solid #F73636;display: flex;align-items: center;justify-content: center;">
+						7
+					</view>
+					<view style="margin-left: 32upx;">
+						<view>
+							七天包退
+						</view>
+						<view style="color: #999999;">
+							购买后七天内无条件退款
+						</view>
+					</view>
+				</view>
+				<view style="display: flex;align-items: center;padding: 29upx 0 ;border-bottom:1upx solid #eee;padding-left: 62upx;">
+					<view style="width: 44upx;height: 44upx;border-radius: 50%; color:#F73636;border:1upx solid #F73636;display: flex;align-items: center;justify-content: center;">
+						7
+					</view>
+					<view style="margin-left: 32upx;">
+						<view>
+							七天包退
+						</view>
+						<view style="color: #999999;">
+							购买后七天内无条件退款
+						</view>
+					</view>
+				</view>
+				<view style="display: flex;align-items: center; padding: 29upx 0 ;border-bottom:1upx solid #eee;padding-left: 62upx;">
+					<view style="width: 44upx;height: 44upx;border-radius: 50%; color:#F73636;border:1upx solid #F73636;display: flex;align-items: center;justify-content: center;">
+						7
+					</view>
+					<view style="margin-left: 32upx;">
+						<view>
+							七天包退
+						</view>
+						<view style="color: #999999;">
+							购买后七天内无条件退款
+						</view>
+					</view>
+				</view>
+				<view style="font-size: 23upx; width: 100%;height: 100upx;background: #F73636;display: flex;align-items: center;justify-content: center;color: #fff;">
+					确定
+				</view>
 			</view>
-			
+
 		</view>
 		<!-- 服务保障弹窗 -->
-		<view style="width: 100%;height: 100%;position: fixed;top: 0;left: 0;background: rgba(0,0,0,0.5);z-index: 100;" v-show="false" >
-			<view style="position: absolute;background: #fff;padding-top: 41upx;width: 100%;bottom: 100upx;height: 704upx;">	
+		<view style="width: 100%;height: 100%;position: fixed;top: 0;left: 0;background: rgba(0,0,0,0.5);z-index: 100;"
+		 v-show="false">
+			<view style="position: absolute;background: #fff;padding-top: 41upx;width: 100%;bottom: 100upx;height: 704upx;">
 				<view style="display: flex;">
 					<image src="../../static/img/1.jpg" style="width: 278upx;height:278upx;margin-top: -150upx;margin-left: 20upx;"></image>
 					<view style="margin-left: 29upx;margin-top: -16upx;">
-						<view  style="color: #F73636;font-size: 36upx;font-weight: bold;">
+						<view style="color: #F73636;font-size: 36upx;font-weight: bold;">
 							¥399.00
 						</view>
 						<view style="font-size: 18upx;color: #999999;">库存：256</view>
@@ -168,21 +169,21 @@
 				</view>
 				<view style="padding: 40upx 20upx 0 20upx;">
 					<view style="margin-bottom: 20upx;">规格</view>
-					<view  style="display: flex;flex-wrap: wrap;">
+					<view style="display: flex;flex-wrap: wrap;">
 						<view style="margin-right: 20upx; margin-bottom: 10upx;font-size: 20upx;color: #666;border: 1upx dashed #aaa;padding: 10upx;display: inline-block;">优惠规格优惠规格优惠规格优惠规格优惠规格优惠规格优...</view>
 						<view style="margin-right: 20upx;margin-bottom: 10upx;font-size: 20upx;color: #666;border: 1upx dashed #aaa;padding: 10upx;display: inline-block;">优惠规格优惠规格优惠规格优惠规格优惠规格优惠规格优...</view>
 					</view>
-					
+
 				</view>
-			    <view style="padding: 40upx 20upx 0 20upx;">
-			    	<view style="margin-bottom: 20upx;">规格</view>
-			    	<view  style="display: flex;flex-wrap: wrap;">
-			    		<view style="margin-right: 20upx; margin-bottom: 10upx;font-size: 20upx;
+				<view style="padding: 40upx 20upx 0 20upx;">
+					<view style="margin-bottom: 20upx;">规格</view>
+					<view style="display: flex;flex-wrap: wrap;">
+						<view style="margin-right: 20upx; margin-bottom: 10upx;font-size: 20upx;
 						color: #666;border: 1upx dashed #aaa;padding: 10upx;display: inline-block;">优惠规格优惠规格...</view>
-			    		<view style="margin-right: 20upx;margin-bottom: 10upx;
+						<view style="margin-right: 20upx;margin-bottom: 10upx;
 						font-size: 20upx;color: #666;border: 1upx dashed #aaa;padding: 10upx;display: inline-block;">优惠规格优惠...</view>
-			    	</view>
-			    </view>
+					</view>
+				</view>
 				<view style="display: flex;align-items: center;justify-content: space-between;padding: 40upx 20upx 0 20upx;">
 					<view>数量</view>
 					<view style="display: flex;align-items: center;">
@@ -190,10 +191,10 @@
 						<view style="margin-left: 18upx;margin-right: 18upx;">3</view>
 						<view style="width: 40upx;height: 40upx;border:1upx solid #aaa; display: flex;align-items: center;justify-content: center;">+</view>
 					</view>
-					
+
 				</view>
 			</view>
-			
+
 		</view>
 	</view>
 </template>
@@ -203,10 +204,10 @@
 	import goodsList from '../../components/goodsList/goodslist.vue'
 	import uniLoadMore from '../../components/uni-load-more/uni-load-more.vue'
 	import url from '../../globel.js'
-	
-	
-	
-	 //http://192.168.1.77:9096/payment/pay?orderId=4&bossId=1&Amount=1 
+
+
+
+	//http://192.168.1.77:9096/payment/pay?orderId=4&bossId=1&Amount=1 
 	export default {
 		components: {
 			goodsList,
@@ -215,7 +216,7 @@
 		},
 		data() {
 			return {
-				orderId:'',
+				orderId: '',
 				statusHeight: 20,
 				current: 0,
 				mode: 'round',
@@ -248,11 +249,10 @@
 						name: '家电',
 						img: '/static/img/category/2.png'
 					}
-					
+
 				],
 				Promotion: [],
-				goodsList: [
-					{
+				goodsList: [{
 						goods_id: 7,
 						img: '/static/img/goods/p8.jpg',
 						name: '商品名称商品名称商品名称商商品名称商品名称商品名称商品名',
@@ -320,85 +320,84 @@
 			});
 		},
 		methods: {
-			buy:function(){
-				var main=this;
-				console.log(url.url+"order/creat");
-				let fd = new FormData();
-				fd.append('userId', 1);
-				fd.append('userAddressId', 1);
-				fd.append('logisticsOrderName','1');
-				fd.append('logisticsCompany', '1');
-				fd.append('hfDesc', "1");
-				fd.append('id', "1");				
-				fd.append('orderDetailStatus','1');
-				fd.append('hfTax',"1");
-				fd.append('purchasePrice',1);
-				fd.append('purchaseQuantity', 1);				
-				fd.append('distribution', "1");
-				fd.append('payStatusorderType', "1");
-				fd.append('amount', "1");				
-				fd.append('hfMemo', "1");
-				fd.append('hfRemark', "1");
-				fd.append('payMethodName', "1");
-				fd.append('googsId', 3);
-				fd.append('respId', 3);
-				fd.append('logisticsOrdersId', "1");				
+			buy: function() {
+				var main = this;
+				// console.log(url.url+"order/creat");
+				// let fd = new FormData();
+				// fd.append('userId', 1);
+				// fd.append('userAddressId', 1);
+				// fd.append('logisticsOrderName','1');
+				// fd.append('logisticsCompany', '1');
+				// fd.append('hfDesc', "1");
+				// fd.append('id', "1");				
+				// fd.append('orderDetailStatus','1');
+				// fd.append('hfTax',"1");
+				// fd.append('purchasePrice',1);
+				// fd.append('purchaseQuantity', 1);				
+				// fd.append('distribution', "1");
+				// fd.append('payStatusorderType', "1");
+				// fd.append('amount', "1");				
+				// fd.append('hfMemo', "1");
+				// fd.append('hfRemark', "1");
+				// fd.append('payMethodName', "1");
+				// fd.append('googsId', 3);
+				// fd.append('respId', 3);
+				// fd.append('logisticsOrdersId', "1");				
 				// fd.append('hfName', params.hfName);
 				// return Axios.post("/api/product/addproduct", fd, { responseType: 'arraybuffer' });
 				uni.request({
-				        url:url.url+"order/creat",
-						method:'post',
-					    dataType: "JSON",
-						responseType: 'arraybuffer',
-						params:fd,
-						// {	
-						// 	uuserId :57,
-						// 	userAddressId:1,
-						// 	googsId :3,
-						// 	logisticsOrderName :'1',
-						// 	respId :3,
-						// 	logisticsOrdersId :"1",
-						// 	logisticsCompany  :'1',
-						// 	hfDesc :"1",
-						// 	id :"1",
-						// 	orderDetailStatus :'1',
-						// 	hfTax :"1",
-						// 	purchasePrice:1,
-						// 	purchaseQuantity :1,
-						// 	distribution :"1",
-						// 	hfDesc :'1',
-						// 	payStatusorderType :"1",
-						// 	amount  :"1",
-						// 	hfMemo  :"1",
-						// 	hfRemark  :"1",
-						// 	payMethodName:"1",
-							
-						// },
-					    success: function(res) {
-							console.log("提交订单1",res);							
-							main.orderId=res.data.data[1].ordersId;
-							console.log(main.orderId)
-							if(res.statusCode==200){
-								uni.request({
-								        url:url.urlPay+"payment/pay",
-										method:'post',
-									    dataType: "JSON",
-										data:{	
-											orderId:main.orderId,
-											bossId :1,
-											Amount:1
-										},
-									    success: function(res) {
-											console.log("提交订单2",res);
-											// if(res.data.status==200){
-												
-											// }
-											
-									    }
-								
-								})
-							}							
-					    }				
+					url: url.url + "order/creat",
+					method: 'get',
+					dataType: "JSON",
+					data: {
+						userId: 1,
+						userAddressId: 1,
+						googsId: 3,
+						logisticsOrderName: 1,
+						respId: 3,
+						logisticsOrdersId: 1,
+						logisticsCompany: 1,
+						hfDesc: 1,
+						id: 54,
+						orderDetailStatus: 1,
+						hfTax: 1,
+						purchasePrice: 1,
+						purchaseQuantity: 1,
+						distribution: 1,
+						payStatus: 1,
+						orderType: 1,
+						amount: 1,
+						hfMemo: 1,
+						hfRemark: 1,
+						payMethodName: 1,
+						ordersid: 57,
+						payMethodType: 1
+					},
+					success: function(res) {
+						console.log("提交订单1", res);
+						main.orderId = res.data.data[0].ordersId;
+						console.log(main.orderId)
+						if (res.statusCode == 200) {
+							uni.request({
+								url: url.urlPay + "payment/pay",
+								method: 'get',
+								dataType: "JSON",
+								data: {
+									orderId: main.orderId,
+									bossId: 1,
+									Amount: 1
+								},
+								success: function(res) {
+									console.log("提交订单2", res);
+									// if(res.data.status==200){
+
+									// }
+
+								}
+
+							})
+						}
+					}
 				})
 			},
 			tosearch: function() {
