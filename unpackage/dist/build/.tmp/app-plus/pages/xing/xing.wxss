@@ -1,0 +1,23 @@
+
+.borde{
+		border-bottom: 1rpx solid #fff;
+}
+.sss{
+		/* background:#66686E; */
+		
+		background: rgba(102 ,104 ,110,0.8);
+}
+.status_bar {
+	        height: var(--status-bar-height);
+	        width: 100%;
+			background: #fff;
+}
+.title{
+	width: 100%;
+	height: 262rpx;
+	
+		background-size: 100% ; 
+		background-repeat: no-repeat; 
+		background-image: url(../../static/img/xing.9b788fba.png);
+}
+

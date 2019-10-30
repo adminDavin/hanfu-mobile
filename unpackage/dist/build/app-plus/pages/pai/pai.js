@@ -1,0 +1,2 @@
+setCssToHead(["body{ background: url(../../static/img/pai.d07a4318.png-do-not-use-local-path-./pages/pai/pai.wxss\x263\x2613) no-repeat; background-size: 100% auto; }\n",],undefined,{path:"./pages/pai/pai.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/pai/pai.wxml') } }));

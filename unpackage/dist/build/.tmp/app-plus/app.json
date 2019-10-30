@@ -5,7 +5,29 @@
     "pages/freeQuan/freeQuan",
     "pages/freeQuan/freeQuan",
     "pages/ping/ping",
-    "pages/use/use"
+    "pages/use/use",
+    "pages/login/login",
+    "pages/fengMian/fengMian",
+    "pages/search/search",
+    "pages/product/product",
+    "pages/xing/xing",
+    "pages/cart/index",
+    "pages/tabBar/cart/cart",
+    "pages/tabBar/cart/cart",
+    "pages/tabBar/category/category",
+    "pages/order/confirmation",
+    "pages/myOrder/myOrder",
+    "pages/pay/payment/payment",
+    "pages/tabBar/user/user",
+    "pages/user/order_list/order_list",
+    "pages/pingjia/index",
+    "pages/uni-icons/uni-icons",
+    "pages/uni-rate/uni-rate",
+    "pages/wait/wait",
+    "pages/tixian/tixian",
+    "pages/pai/pai",
+    "pages/address/address",
+    "pages/address/addressManage"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -26,7 +48,7 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/category/category",
+        "pagePath": "pages/tabBar/category/category",
         "iconPath": "static/img/tabBar/category.png",
         "selectedIconPath": "static/img/tabBar/category-on.png",
         "text": "分类"
@@ -38,7 +60,7 @@
         "text": "分类"
       },
       {
-        "pagePath": "pages/use/use",
+        "pagePath": "pages/tabBar/user/user",
         "iconPath": "static/img/tabBar/category.png",
         "selectedIconPath": "static/img/tabBar/category-on.png",
         "text": "分类"

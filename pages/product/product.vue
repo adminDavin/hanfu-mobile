@@ -216,6 +216,7 @@
 		},
 		data() {
 			return {
+				datapay:"",
 				orderId: '',
 				statusHeight: 20,
 				current: 0,
@@ -358,8 +359,8 @@
 						logisticsOrdersId: 1,
 						logisticsCompany: 1,
 						hfDesc: 1,
-						id: 54,
-						orderDetailStatus: 1,
+						id: 169,
+						// orderDetailStatus: 1,
 						hfTax: 1,
 						purchasePrice: 1,
 						purchaseQuantity: 1,
@@ -389,9 +390,24 @@
 								},
 								success: function(res) {
 									console.log("提交订单2", res);
+									main.datapay= res.data.data;
+									
+									// main.datapay= JSON.parse(main.datapay)
+									// console.log(main.datapay)
 									// if(res.data.status==200){
 
 									// }
+									console.log(main.datapay);
+									uni.requestPayment({
+									    provider: 'alipay',
+									    orderInfo: main.datapay, //微信、支付宝订单数据
+									    success: function (res) {
+									        console.log('success:' + JSON.stringify(res));
+									    },
+									    fail: function (err) {
+									        console.log('fail:' + JSON.stringify(err));
+									    }
+									});
 
 								}
 

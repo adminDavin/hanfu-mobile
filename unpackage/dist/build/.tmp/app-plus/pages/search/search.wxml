@@ -1,0 +1,1 @@
+<view><zy-search vue-id="1" is-focus="{{false}}" is-block="{{true}}" show-want="{{false}}" bind:__l="__l"></zy-search></view>

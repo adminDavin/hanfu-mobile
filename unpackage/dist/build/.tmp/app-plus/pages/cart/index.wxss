@@ -1,0 +1,555 @@
+@charset "UTF-8";
+/**
+ * 这里是uni-app内置的常用样式变量
+ *
+ * uni-app 官方扩展插件及插件市场（https://ext.dcloud.net.cn）上很多三方插件均使用了这些样式变量
+ * 如果你是插件开发者，建议你使用scss预处理，并在插件代码中直接使用这些变量（无需 import 这个文件），方便用户通过搭积木的方式开发整体风格一致的App
+ *
+ */
+/**
+ * 如果你是App开发者（插件使用者），你可以通过修改这些变量来定制自己的插件主题，实现自定义主题功能
+ *
+ * 如果你的项目同样使用了scss预处理，你也可以直接在你的 scss 代码中使用如下变量，同时无需 import 这个文件
+ */
+/* 颜色变量 */
+/* 行为相关颜色 */
+/* 文字基本颜色 */
+/* 背景颜色 */
+/* 边框颜色 */
+/* 尺寸变量 */
+/* 文字尺寸 */
+/* 图片尺寸 */
+/* Border Radius */
+/* 水平间距 */
+/* 垂直间距 */
+/* 透明度 */
+/* 文章场景相关 */
+@-webkit-keyframes showPopup {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+@keyframes showPopup {
+0% {
+    opacity: 0;
+}
+100% {
+    opacity: 1;
+}
+}
+@-webkit-keyframes hidePopup {
+0% {
+    opacity: 1;
+}
+100% {
+    opacity: 0;
+}
+}
+@keyframes hidePopup {
+0% {
+    opacity: 1;
+}
+100% {
+    opacity: 0;
+}
+}
+@-webkit-keyframes showLayer {
+0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+}
+100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+}
+}
+@keyframes showLayer {
+0% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+}
+100% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+}
+}
+@-webkit-keyframes hideLayer {
+0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+}
+100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+}
+}
+@keyframes hideLayer {
+0% {
+    -webkit-transform: translateY(-100%);
+            transform: translateY(-100%);
+}
+100% {
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+}
+}
+.m-store-banner {
+  min-height: 270rpx;
+  position: relative;
+  padding-top: 20rpx;
+  background: #eee;
+  background-size: 100% 200rpx;
+  background-repeat: no-repeat;
+}
+.m-store-banner .m-content {
+    width: 690rpx;
+    position: relative;
+    bottom: 10rpx;
+    left: 30rpx;
+    right: 30rpx;
+    margin-top: 30rpx;
+    background: #fff;
+    border-radius: 15rpx;
+    -webkit-box-shadow: 0rpx 5rpx 20rpx rgba(0, 0, 0, 0.1);
+            box-shadow: 0rpx 5rpx 20rpx rgba(0, 0, 0, 0.1);
+    z-index: 100;
+}
+.m-store-banner .m-content .m-message {
+      padding: 20rpx;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -webkit-flex-direction: row;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -webkit-box-pack: justify;
+      -webkit-justify-content: space-between;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -webkit-box-align: end;
+      -webkit-align-items: flex-end;
+          -ms-flex-align: end;
+              align-items: flex-end;
+}
+.m-store-banner .m-content .m-message .m-img {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 135rpx;
+            -ms-flex: 0 0 135rpx;
+                flex: 0 0 135rpx;
+        height: 135rpx;
+}
+.m-store-banner .m-content .m-message .m-body {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1;
+            -ms-flex: 1;
+                flex: 1;
+        padding-left: 10rpx;
+        padding-bottom: 0;
+}
+.m-store-banner .m-content .m-message .m-body .m-title {
+          font-size: 32rpx;
+          color: #333333;
+}
+.m-store-banner .m-content .m-message .m-body .m-text {
+          font-size: 20rpx;
+          color: #999999;
+          line-height: 38rpx;
+          margin-top: 10rpx;
+}
+.m-store-banner .m-content .m-message .m-body .m-time {
+          font-size: 20rpx;
+          color: #999999;
+          margin-top: 10rpx;
+}
+.m-store-banner .m-content .m-message .m-phone {
+        -webkit-box-flex: 0;
+        -webkit-flex: 0 0 40rpx;
+            -ms-flex: 0 0 40rpx;
+                flex: 0 0 40rpx;
+        text-align: right;
+}
+.popup {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 300;
+  display: none;
+}
+.popup .mask {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 21;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+.popup .layer {
+    position: fixed;
+    z-index: 22;
+    bottom: -70%;
+    width: 100%;
+    padding: 0;
+    height: 70%;
+    border-radius: 20rpx 20rpx 0 0;
+    background-color: #fff;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+    -webkit-align-content: space-between;
+        -ms-flex-line-pack: justify;
+            align-content: space-between;
+}
+.popup .layer .m-shopcar-box {
+      width: 100%;
+}
+.popup .layer .m-shopcar-box .m-header {
+        padding: 30rpx 30rpx;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+}
+.popup .layer .m-shopcar-box .m-header .m-line {
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          color: #333333;
+          font-size: 30rpx;
+}
+.popup .layer .m-shopcar-box .m-header .m-line .m-light {
+            color: #333333;
+            font-size: 22rpx;
+            padding-left: 10rpx;
+}
+.popup .layer .m-shopcar-box .m-header .m-clear-car {
+          color: #333333;
+          font-size: 22rpx;
+}
+.popup .layer .m-shopcar-box .m-shopcar-item {
+        margin-left: 30rpx;
+        margin-right: 30rpx;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: row;
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: justify;
+        -webkit-justify-content: space-between;
+            -ms-flex-pack: justify;
+                justify-content: space-between;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        border-top: 1px solid #eee;
+        padding: 20rpx;
+}
+.popup .layer .m-shopcar-box .m-shopcar-item:last-of-type {
+          border-bottom: 1px solid #eee;
+}
+.popup .layer .m-shopcar-box .m-shopcar-item .m-title {
+          color: #4c4c4c;
+          font-size: 26rpx;
+}
+.popup .layer .m-shopcar-box .m-shopcar-item .m-price {
+          color: #ff582b;
+          font-size: 26rpx;
+}
+.popup .layer .btn {
+      width: 100%;
+      height: 100rpx;
+}
+.popup .layer .btn .button {
+        width: 100%;
+        height: 80rpx;
+        border-radius: 40rpx;
+        color: #fff;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        background-color: #f47952;
+        font-size: 28rpx;
+}
+.popup.show {
+    display: block;
+}
+.popup.show .mask {
+      -webkit-animation: showPopup 0.2s linear both;
+              animation: showPopup 0.2s linear both;
+}
+.popup.show .layer {
+      -webkit-animation: showLayer 0.2s linear both;
+              animation: showLayer 0.2s linear both;
+}
+.popup.hide {
+    display: block;
+}
+.popup.hide .mask {
+      -webkit-animation: hidePopup 0.2s linear both;
+              animation: hidePopup 0.2s linear both;
+}
+.popup.hide .layer {
+      -webkit-animation: hideLayer 0.2s linear both;
+              animation: hideLayer 0.2s linear both;
+}
+.popup.none {
+    display: none;
+}
+.popup.service .row {
+    margin: 30rpx 0;
+}
+.popup.service .row .title {
+      font-size: 30rpx;
+      margin: 10rpx 0;
+}
+.popup.service .row .description {
+      font-size: 28rpx;
+      color: #999;
+}
+.popup.spec .title {
+    font-size: 30rpx;
+    margin: 30rpx 0;
+}
+.popup.spec .sp {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.popup.spec .sp view {
+      font-size: 28rpx;
+      padding: 5rpx 20rpx;
+      border-radius: 8rpx;
+      margin: 0 30rpx 20rpx 0;
+      background-color: #f6f6f6;
+}
+.popup.spec .sp view.on {
+        padding: 3rpx 18rpx;
+        border: solid 1rpx #f47925;
+}
+.popup.spec .length {
+    margin-top: 30rpx;
+    border-top: solid 1rpx #aaa;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding-top: 20rpx;
+}
+.popup.spec .length .text {
+      font-size: 30rpx;
+}
+.popup.spec .length .number {
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+}
+.popup.spec .length .number .input {
+        width: 80rpx;
+        height: 60rpx;
+        margin: 0 10rpx;
+        background-color: #f3f3f3;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+            -ms-flex-align: center;
+                align-items: center;
+        text-align: center;
+}
+.popup.spec .length .number .input input {
+          width: 80rpx;
+          height: 60rpx;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          text-align: center;
+          font-size: 26rpx;
+}
+.popup.spec .length .number .sub, .popup.spec .length .number .add {
+        width: 60rpx;
+        height: 60rpx;
+        background-color: #f3f3f3;
+        border-radius: 5rpx;
+}
+.popup.spec .length .number .sub .icon, .popup.spec .length .number .add .icon {
+          font-size: 30rpx;
+          width: 60rpx;
+          height: 60rpx;
+          display: -webkit-box;
+          display: -webkit-flex;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-pack: center;
+          -webkit-justify-content: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          -webkit-box-align: center;
+          -webkit-align-items: center;
+              -ms-flex-align: center;
+                  align-items: center;
+}
+.category-list {
+  width: 100%;
+  background-color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 99rpx;
+}
+.category-list .left, .category-list .right {
+    background: #fff;
+    position: absolute;
+    top: 289rpx;
+    top: calc(100rpx + var(--status-bar-height));
+    bottom: 0rpx;
+}
+.category-list .left {
+    width: 24%;
+    left: 0rpx;
+    background-color: #f6f3f3;
+}
+.category-list .left .row {
+      width: 100%;
+      height: 90rpx;
+      display: -webkit-box;
+      display: -webkit-flex;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+      -webkit-align-items: center;
+          -ms-flex-align: center;
+              align-items: center;
+}
+.category-list .left .row .text {
+        width: 100%;
+        position: relative;
+        font-size: 28rpx;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        color: #999999;
+}
+.category-list .left .row .text .block {
+          position: absolute;
+          width: 0rpx;
+          left: 0;
+}
+.category-list .left .row.on {
+        height: 100rpx;
+        background-color: #fff;
+}
+.category-list .left .row.on .text {
+          font-size: 30rpx;
+}
+.category-list .left .row.on .text .block {
+            width: 10rpx;
+            height: 80%;
+            top: 10%;
+}
+.category-list .right {
+    width: 76%;
+    left: 24%;
+}
+.category-list .right .category {
+      padding: 20rpx 30rpx;
+}
+.category-list .right .category .list {
+        margin-top: 40rpx;
+        width: 100%;
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+                flex-wrap: wrap;
+}
+.category-list .right .category .list .box {
+          width: 100%;
+}
+/*抛物线小球*/
+.good_box {
+  width: 10px;
+  height: 10px;
+  position: fixed;
+  border-radius: 50%;
+  overflow: hidden;
+  left: 50%;
+  top: 50%;
+  z-index: +99;
+  background: #ff582b;
+}
+

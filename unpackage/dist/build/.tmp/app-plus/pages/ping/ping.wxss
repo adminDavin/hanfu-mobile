@@ -1,5 +1,5 @@
 
-.zhong.data-v-d91b2820{
+.zhong.data-v-45e4549e{
 	font-weight: 500;
 	display: -webkit-box;
 	display: -webkit-flex;
@@ -21,7 +21,7 @@
 	margin-bottom: 20rpx;
 	color:#666666;
 }
-.active.data-v-d91b2820{
+.active.data-v-45e4549e{
 	background: red;
 	color:#fff;
 }

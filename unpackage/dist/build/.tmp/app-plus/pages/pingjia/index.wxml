@@ -1,0 +1,1 @@
+<view class="content"><my-issue vue-id="1" bind:__l="__l"></my-issue><my-issue vue-id="2" score="{{3}}" bind:__l="__l"></my-issue><my-issue vue-id="3" starsDisabled="{{true}}" bind:__l="__l"></my-issue></view>

@@ -1,0 +1,2 @@
+setCssToHead(["body{ background: #E5E5E5; }\n",],undefined,{path:"./pages/wait/wait.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/wait/wait.wxml') } }));

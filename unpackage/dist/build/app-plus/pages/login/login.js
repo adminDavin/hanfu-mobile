@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"csp{ font-size: ",[0,20],"; color: #999999; }\n",],undefined,{path:"./pages/login/login.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/login/login.wxml') } }));

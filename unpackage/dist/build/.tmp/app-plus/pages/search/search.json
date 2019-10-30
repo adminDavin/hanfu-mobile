@@ -1,0 +1,7 @@
+{
+  "titleNView": false,
+  "softinputNavBar": "none",
+  "usingComponents": {
+    "zy-search": "/components/zy-search/zy-search"
+  }
+}

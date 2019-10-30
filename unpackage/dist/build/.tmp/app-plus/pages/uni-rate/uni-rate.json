@@ -1,0 +1,7 @@
+{
+  "titleNView": false,
+  "softinputNavBar": "none",
+  "usingComponents": {
+    "uni-icons": "/pages/uni-icons/uni-icons"
+  }
+}
