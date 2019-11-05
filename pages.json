@@ -6,8 +6,8 @@
 				"app-plus": {
 					"titleNView": false,
 					"softinputNavBar": "none"
-					
-					
+
+
 				}
 			}
 		},
@@ -17,7 +17,7 @@
 				"app-plus": {
 					"titleNView": false,
 					"softinputNavBar": "none"
-					
+
 				}
 			}
 		},
@@ -27,253 +27,256 @@
 				"app-plus": {
 					"titleNView": false,
 					"softinputNavBar": "none"
-					
-				}
-			}
-		},
-		
 
-	    {
-            "path" : "pages/freeQuan/freeQuan",
-            "style": {
-            	"app-plus": {
-            		"titleNView": false,
-            		"softinputNavBar": "none"
-            		
-            	}
-            }
-        }
-        ,{
-            "path" : "pages/ping/ping",
-            "style": {
-            	"app-plus": {
-            		"titleNView": false,
-            		"softinputNavBar": "none"
-            		
-					
-            	}
-            }
-        }
-        ,{
-            "path" : "pages/use/use",
-            "style": {
-            	"app-plus": {
-            		"titleNView": false,
-            		"softinputNavBar": "none"
-            		
-            	}
-            }
-        }
-        ,{
-            "path" : "pages/login/login",
-            "style": {
-            	"app-plus": {
-            		"titleNView": false,
-            		"softinputNavBar": "none"
-            		
-            	}
-            }
-        }
-		
-        ,{
-            "path" : "pages/fengMian/fengMian",
-           "style": {
-           	"app-plus": {
-           		"titleNView": false,
-           		"softinputNavBar": "none"
-           		
-           	}
-           }
-        }
-		,{
-		    "path" : "pages/search/search",
-		   "style": {
-		   	"app-plus": {
-		   		"titleNView": false,
-		   		"softinputNavBar": "none"
-		   		
-		   	}
-		   }
-		}
-        ,{
-            "path" : "pages/product/product",
-           "style": {
-           	"app-plus": {
-           		"titleNView": false,
-           		"softinputNavBar": "none"
-           		
-           	}
-           }
-        }
-        
-        
-        ,{
-            "path" : "pages/xing/xing",
-           "style": {
-           	"app-plus": {
-           		"titleNView": false,
-           		"softinputNavBar": "none"
-           		
-           	}
-           }
-        },
-		{
-		    "path" : "pages/cart/index",
-		   "style": {
-		   	"app-plus": {
-		   		"titleNView": false,
-		   		"softinputNavBar": "none"
-		   		
-		   	}
-		   }
-		},{
-		    "path" : "pages/tabBar/cart/cart",
-		   "style": {
-		   	"app-plus": {
-		   		"titleNView": false,
-		   		"softinputNavBar": "none"
-		   		
-		   	}
-		   }
-		},
-			{
-			    "path" : "pages/tabBar/cart/cart",
-			   "style": {
-			   	"app-plus": {
-			   		"titleNView": false,
-			   		"softinputNavBar": "none"
-			   		
-			   	}
-			   }
-			},
-			{
-			    "path" : "pages/tabBar/category/category",
-			   "style": {
-			   	"app-plus": {
-			   		"titleNView": false,
-			   		"softinputNavBar": "none"
-			   		
-			   	}
-			   }
-			},
-			{
-				"path" : "pages/order/confirmation",
-				"style": {
-					"app-plus": {
-						"titleNView": false,
-						"softinputNavBar": "none"
-						
-					}
-				}
-				
-			}
-		
-        ,{
-            "path" : "pages/myOrder/myOrder",
-            "style" : {}
-        },
-		{
-			"path" : "pages/pay/payment/payment",
-			"style": {
-				"app-plus": {
-					"titleNView": false,
-					"softinputNavBar": "none"
-					
 				}
 			}
-			
 		},
-		
-		{
-			"path" : "pages/tabBar/user/user",
-			"style": {
-				"app-plus": {
-					"titleNView": false,
-					"softinputNavBar": "none"
-					
-				}
-			}
-			
-		},
-		{
-			"path" : "pages/user/order_list/order_list",
-			"style": {
-				"app-plus": {
-					"titleNView": false,
-					"softinputNavBar": "none"
-					
-				}
-			}
-			
-		}
-        ,{
-            "path" : "pages/pingjia/index",
-            "style" : {
-				
-			}
-        },
-		{
-		    "path" : "pages/uni-icons/uni-icons",
-		    "style" : {
-				
-			}
-		},
-		{
-		    "path" : "pages/uni-rate/uni-rate",
-		   "style": {
-		   	"app-plus": {
-		   		"titleNView": false,
-		   		"softinputNavBar": "none"
-		   		
-		   	}
-		   }
-		   
-		}
-		
 
-        ,{
-            "path" : "pages/wait/wait",
-           "style": {
-           	"app-plus": {
-           		"titleNView": false,
-           		"softinputNavBar": "none"
-           		
-           	}
-           }
-        }
-        ,{
-            "path" : "pages/tixian/tixian",
-            "style": {
-            	"app-plus": {
-            		"titleNView": false,
-            		"softinputNavBar": "none"
-            		
-            	}
-            }
-        }
-        ,{
-            "path" : "pages/pai/pai",
-           "style": {
-           	"app-plus": {
-           		"titleNView": false,
-           		"softinputNavBar": "none"
-           		
-           	}
-           }
-        }
-        ,{
-            "path" : "pages/address/address",
-            "style" : {
-				
+
+		{
+			"path": "pages/freeQuan/freeQuan",
+			"style": {
+				"app-plus": {
+					"titleNView": false,
+					"softinputNavBar": "none"
+
+				}
 			}
-        } 
-		,{
-            "path" : "pages/address/addressManage",
-            "style" : {
-				
+		}, {
+			"path": "pages/ping/ping",
+			"style": {
+				"app-plus": {
+					"titleNView": false,
+					"softinputNavBar": "none"
+
+
+				}
 			}
-        }
-    ],
+		}, {
+			"path": "pages/use/use",
+			"style": {
+				"app-plus": {
+					"titleNView": false,
+					"softinputNavBar": "none"
+
+				}
+			}
+		}, {
+			"path": "pages/login/login",
+			"style": {
+				"app-plus": {
+					"titleNView": false,
+					"softinputNavBar": "none"
+
+				}
+			}
+		}
+
+		, {
+			"path": "pages/fengMian/fengMian",
+			"style": {
+				"app-plus": {
+					"titleNView": false,
+					"softinputNavBar": "none"
+
+				}
+			}
+		}, {
+			"path": "pages/search/search",
+			"style": {
+				"app-plus": {
+					"titleNView": false,
+					"softinputNavBar": "none"
+
+				}
+			}
+		}, {
+			"path": "pages/product/product",
+			"style": {
+				"app-plus": {
+					"titleNView": false,
+					"softinputNavBar": "none"
+
+				}
+			}
+		}
+
+
+		, {
+			"path": "pages/xing/xing",
+			"style": {
+				"app-plus": {
+					"titleNView": false,
+					"softinputNavBar": "none"
+
+				}
+			}
+		},
+		{
+			"path": "pages/cart/index",
+			"style": {
+				"app-plus": {
+					"titleNView": false,
+					"softinputNavBar": "none"
+
+				}
+			}
+		}, {
+			"path": "pages/tabBar/cart/cart",
+			"style": {
+				"app-plus": {
+					"titleNView": false,
+					"softinputNavBar": "none"
+
+				}
+			}
+		},
+		{
+			"path": "pages/tabBar/cart/cart",
+			"style": {
+				"app-plus": {
+					"titleNView": false,
+					"softinputNavBar": "none"
+
+				}
+			}
+		},
+		{
+			"path": "pages/tabBar/category/category",
+			"style": {
+				"app-plus": {
+					"titleNView": false,
+					"softinputNavBar": "none"
+
+				}
+			}
+		},
+		{
+			"path": "pages/order/confirmation",
+			"style": {
+				"app-plus": {
+					"titleNView": false,
+					"softinputNavBar": "none"
+
+				}
+			}
+
+		}
+
+		, {
+			"path": "pages/myOrder/myOrder",
+			"style": {}
+		},
+		{
+			"path": "pages/pay/payment/payment",
+			"style": {
+				"app-plus": {
+					"titleNView": false,
+					"softinputNavBar": "none"
+
+				}
+			}
+
+		},
+
+		{
+			"path": "pages/tabBar/user/user",
+			"style": {
+				"app-plus": {
+					"titleNView": false,
+					"softinputNavBar": "none"
+
+				}
+			}
+
+		},
+		{
+			"path": "pages/user/order_list/order_list",
+			"style": {
+				"app-plus": {
+					"titleNView": false,
+					"softinputNavBar": "none"
+
+				}
+			}
+
+		}, {
+			"path": "pages/pingjia/index",
+			"style": {
+
+			}
+		},
+		{
+			"path": "pages/uni-icons/uni-icons",
+			"style": {
+
+			}
+		},
+		{
+			"path": "pages/uni-rate/uni-rate",
+			"style": {
+				"app-plus": {
+					"titleNView": false,
+					"softinputNavBar": "none"
+
+				}
+			}
+
+		}
+
+
+		, {
+			"path": "pages/wait/wait",
+			"style": {
+				"app-plus": {
+					"titleNView": false,
+					"softinputNavBar": "none"
+
+				}
+			}
+		}, {
+			"path": "pages/tixian/tixian",
+			"style": {
+				"app-plus": {
+					"titleNView": false,
+					"softinputNavBar": "none"
+
+				}
+			}
+		}, {
+			"path": "pages/pai/pai",
+			"style": {
+				"app-plus": {
+					"titleNView": false,
+					"softinputNavBar": "none"
+
+				}
+			}
+		}, 
+		{
+			"path": "pages/address/address",
+			"style": {
+				"navigationBarTitleText": "收获地址",
+				"app-plus": {
+		
+		
+					
+				}
+		
+			}
+		}, {
+			"path": "pages/address/addressManage",
+			"style": {
+				"navigationBarTitleText": "添加收获地址",
+				"app-plus": {
+
+
+					
+				}
+
+			}
+		}
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
@@ -298,19 +301,19 @@
 				"text": "分类"
 			},
 			{
-				"pagePath": "pages/freeQuan/freeQuan",
+				"pagePath": "pages/tabBar/cart/cart",
 				"iconPath": "static/img/tabBar/category.png",
 				"selectedIconPath": "static/img/tabBar/category-on.png",
-				"text": "分类"
+				"text": "购物车"
 			},
-			
+
 			{
 				"pagePath": "pages/tabBar/user/user",
 				"iconPath": "static/img/tabBar/category.png",
 				"selectedIconPath": "static/img/tabBar/category-on.png",
 				"text": "分类"
 			}
-			
+
 		]
 	},
 	"condition": { //模式配置，仅开发期间生效

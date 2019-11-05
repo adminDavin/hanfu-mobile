@@ -1,9 +1,9 @@
 <template>
-	<view class="index-wrapper">
+	<view class="index-wrapper" style="padding-top:40px;">
 		<view class="status_bar">
 		            <!-- 这里是状态栏 -->
 		</view>
-		<view style="padding: 10upx;" @click="tosearch" >
+		<view style="padding: 10upx;position: fixed;top: 0;width: 97%;background: #fff;z-index: 100;" @click="tosearch" >
 			<view style="display: flex;align-items: center;border:1upx solid #ccc;height: 60upx;border-radius: 15px;">
 				<image src="../../static/img/sousuo_1.png" mode="" style="width: 42upx;height: 42upx;margin-left: 17upx;"></image>
 				<input type="text" placeholder="请输入您要搜索的关键词" style="width: 85%;text-align: center;" placeholder-class="csp">
@@ -13,22 +13,20 @@
 		<view class="swiper-wrapper">
 			<view class="swiper-box">
 				<swiper class="swiper-content" :autoplay="true" :interval="3000" :circular="true" @change="changeSwiper">
-					<swiper-item class="swiper-item" v-for="imgs in swiperList" :key="imgs.id">
+					<swiper-item class="swiper-item" v-for="imgs in pic" :key="imgs.id">
 						<image class="swiper-img" :src="imgs.img"></image>
 					</swiper-item>
 				</swiper>
 				<view class="indicator">
-					<view class="dots" v-for="(swiper, index) in swiperList" :class="[currentSwiper == index ? 'on' : '']" :key="index"></view>
+					<view class="dots" v-for="(swiper, index) in pic" :class="[currentSwiper == index ? 'on' : '']" :key="index"></view>
 				</view>
 			</view>
 		</view>
-
-
 		<!-- 分类列表 -->
 		<view class="category-wrapper">
-			<view class="category-content" v-for="categorys in categoryList" :key="categorys.id">
-				<image class="category-img" :src="categorys.img"></image>
-				<text class="category-name">{{categorys.name}}</text>
+			<view class="category-content" v-for="categorys in typeData" :key="categorys.id">
+				<!-- <image class="category-img" :src="categorys.img"></image> -->
+				<text class="category-name">{{categorys.hfName}}</text>
 			</view>
 		</view>
 		<view style="background:rgba(245,245,245,1);padding-top: 19upx;">
@@ -36,23 +34,23 @@
 			<view class="goodsList-wrapper">
 				<view class="title1" style="font-size: 31upx;font-weight: bold;margin-bottom: 19upx;margin-top: 18upx;"  >龙年限定</view>
 				<view class="goodsBox" >
-					<goods-list :goodsList="goods"  ></goods-list>
+					<goods-list :goodsList="rcommendData"  ></goods-list>
 				</view>
 			</view>
 			<!-- 龙年限定 -->
-			<view class="goodsList-wrapper">
+		<!-- 	<view class="goodsList-wrapper">
 				<view class="title1" style="font-size: 30upx;font-weight: bold;margin-bottom: 19upx;margin-top: 18upx;">本周一折</view>
 				<view class="goodsBox">
 					<goods-list :goodsList="goods"></goods-list>
 				</view>
-			</view>
+			</view> -->
 			<!-- 产品列表 -->
-			<view class="goodsList-wrapper">
+			<!-- <view class="goodsList-wrapper">
 				<view class="title1" style="font-size: 30upx;font-weight: bold;margin-bottom: 19upx;margin-top: 18upx;">精选商品</view>
 				<view class="goodsBox">
 					<goods-list :goodsList="goodsList"></goods-list>
 				</view>
-			</view>
+			</view> -->
 		</view>
 
 		<!-- 加载更多 -->
@@ -65,6 +63,7 @@
 	import goodsList from '../../components/goodsList/goodslist.vue'
 	import uniLoadMore from '../../components/uni-load-more/uni-load-more.vue'
 	import url from '../../globel.js'
+	
 	export default {
 		components: {
 			goodsList,
@@ -73,6 +72,9 @@
 		},
 		data() {
 			return {
+				typeData:[],
+				rcommendData:[],
+				pic:[],
 				statusHeight: 20,
 				current: 0,
 				mode: 'round',
@@ -81,17 +83,8 @@
 						id: 1,
 						src: 'url1',
 						img: '/static/img/1.jpg'
-					},
-					{
-						id: 2,
-						src: 'url2',
-						img: '/static/img/2.jpg'
-					},
-					{
-						id: 3,
-						src: 'url3',
-						img: '/static/img/3.jpg'
 					}
+					
 				],
 				currentSwiper: 0,
 				// 分类菜单
@@ -105,36 +98,7 @@
 						name: '家电',
 						img: '/static/img/category/2.png'
 					},
-					{
-						id: 3,
-						name: '服饰',
-						img: '/static/img/category/3.png'
-					},
-					{
-						id: 4,
-						name: '日用',
-						img: '/static/img/category/4.png'
-					},
-					{
-						id: 5,
-						name: '蔬果',
-						img: '/static/img/category/5.png'
-					},
-					{
-						id: 6,
-						name: '运动',
-						img: '/static/img/category/6.png'
-					},
-					{
-						id: 7,
-						name: '书籍',
-						img: '/static/img/category/7.png'
-					},
-					{
-						id: 8,
-						name: '文具',
-						img: '/static/img/category/8.png'
-					}
+					
 				],
 				Promotion: [],
 				goodsList: [{
@@ -143,69 +107,6 @@
 						name: '商品名称',
 						price: 168,
 						slogan: 1558
-					},
-					{
-						goods_id: 1,
-						img: '/static/img/goods/p2.jpg',
-						name: '商品名称商品名',
-						price: 167,
-						slogan: 1038
-					},
-					{
-						goods_id: 2,
-						img: '/static/img/goods/p3.jpg',
-						name: '商品名称商品名称商品名称商品名称商品名称',
-						price: 17,
-						slogan: 1228
-					},
-					{
-						goods_id: 3,
-						img: '/static/img/goods/p4.jpg',
-						name: '商品名称商品名称商',
-						price: 167,
-						slogan: 1058
-					},
-					{
-						goods_id: 4,
-						img: '/static/img/goods/p5.jpg',
-						name: '商品名称商品名称商品名',
-						price: 107,
-						slogan: 558
-					},
-					{
-						goods_id: 5,
-						img: '/static/img/goods/p6.jpg',
-						name: '商品名名称商品品名称商品名称',
-						price: 177,
-						slogan: 58
-					},
-					{
-						goods_id: 6,
-						img: '/static/img/goods/p7.jpg',
-						name: '商品名称商品名称商品名称商商品名称',
-						price: 18,
-						slogan: 1800
-					},
-					{
-						goods_id: 7,
-						img: '/static/img/goods/p8.jpg',
-						name: '商品名称商品名称商品名称商商品名称商品名称商品名称商品名',
-						price: 144,
-						slogan: 13526
-					},
-					{
-						goods_id: 8,
-						img: '/static/img/goods/p9.jpg',
-						name: '商品名称商品名称商品名称商品名称商品名称',
-						price: 123,
-						slogan: 1000
-					},
-					{
-						goods_id: 9,
-						img: '/static/img/goods/p10.jpg',
-						name: '商品名称商品名称商品名称商品名',
-						price: 186,
-						slogan: 3008
 					}
 				],
 				goods: [{
@@ -214,13 +115,6 @@
 						name: '商品名称',
 						price: 168,
 						slogan: 1558
-					},
-					{
-						goods_id: 1,
-						img: '/static/img/goods/p2.jpg',
-						name: '商品名称商品名',
-						price: 167,
-						slogan: 1038
 					}
 
 				],
@@ -237,6 +131,10 @@
 			this.goodsList = this.goodsList.concat(this.goodsList);
 		},
 		mounted() {
+			this.type();
+			this.productPic();
+			// this.productList();
+			this.recommend();
 			console.log(url.url)
 			uni.getLocation({
 				geocode: true,
@@ -255,7 +153,76 @@
 			});
 		},
 		methods: {
-			
+			//分类
+			type:function() {
+				var main = this;
+				uni.request({
+					url: url.getType+"/listCategory",
+					method: 'get',
+					// dataType: "JSON",
+					
+					success: function(res) {
+						console.log("分类", res);	
+						main.typeData= res.data.data;
+						// for(var i=0;i<main.typeData.length;i++){
+						// 	main.rcommendData[i].img=url.producut+'/getFile?fileId='+main.pic[i].fileId;
+						// }
+						console.log(main.pic)
+					}
+				})
+			},
+			// 轮播图
+			productPic: function() {
+				var main = this;
+				uni.request({
+					url: url.product + "/findAllPicture",
+					method: 'get',
+					// dataType: "JSON",					
+					success: function(res) {
+						console.log("轮播图", res);	
+						main.pic= res.data.data;
+						for(var i=0;i<main.pic.length;i++){
+							main.pic[i].img=url.getFile+'/getFile?fileId='+main.pic[i].fileId;
+						}
+						
+						console.log(main.pic)
+					}
+				})
+			},
+			// 热门推荐
+			recommend:function() {
+				console.log(1111111)
+				var main = this;
+				uni.request({
+					url: url.product+"/findAllGoods",
+					method: 'get',
+					// dataType: "JSON",
+					
+					success: function(res) {
+						
+						console.log("热门推荐", res);	
+						main.rcommendData= res.data.data;
+						for(var i=0;i<main.rcommendData.length;i++){
+							main.rcommendData[i].img=url.getFile+'/getFile?fileId='+main.rcommendData[i].hfGoodsPictureId;
+						}
+						console.log(main.rcommendData)
+					}
+				})
+			},
+			productList: function() {
+				var main = this;
+				uni.request({
+					url: url.urlProduct + "/urlProduct",
+					method: 'get',
+					dataType: "JSON",
+					data: {
+				
+					},
+					success: function(res) {
+						console.log("提交订单1", res);	
+					}
+				})
+			},
 			tosearch:function(){
 				uni.navigateTo({
 					url:'../search/search'
@@ -365,7 +332,7 @@
 				.swiper-content {
 					width: 100%;
 					height: 300upx;
-					background-color: aqua;
+					
 
 					.swiper-item {
 						.swiper-img {

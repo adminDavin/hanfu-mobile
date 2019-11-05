@@ -88,7 +88,7 @@
 			condimentum tempor. Proin tincidunt facilisis lorem sed facilisis. Quisque ut semper nulla, a facilisis nibh.
 		</view>
 
-		<view style="display: flex;">
+		<view style="display: flex;position: fixed;bottom: 0;width: 100%;background: #fff;">
 			<view style="display: flex;align-items: center;width: 30%;justify-content: space-around;">
 				<view style="display: flex;flex-direction: column;align-items: center;">
 					<image src="../../static/img/gou.png" style="width: 50upx;height: 50upx;"></image>
@@ -216,6 +216,7 @@
 		},
 		data() {
 			return {
+				id:'',
 				datapay:"",
 				orderId: '',
 				statusHeight: 20,
@@ -226,16 +227,6 @@
 						id: 1,
 						src: 'url1',
 						img: '/static/img/1.jpg'
-					},
-					{
-						id: 2,
-						src: 'url2',
-						img: '/static/img/2.jpg'
-					},
-					{
-						id: 3,
-						src: 'url3',
-						img: '/static/img/3.jpg'
 					}
 				],
 				currentSwiper: 0,
@@ -244,11 +235,6 @@
 						id: 1,
 						name: '办公',
 						img: '/static/img/category/1.png'
-					},
-					{
-						id: 2,
-						name: '家电',
-						img: '/static/img/category/2.png'
 					}
 
 				],
@@ -259,21 +245,8 @@
 						name: '商品名称商品名称商品名称商商品名称商品名称商品名称商品名',
 						price: 144,
 						slogan: 13526
-					},
-					{
-						goods_id: 8,
-						img: '/static/img/goods/p9.jpg',
-						name: '商品名称商品名称商品名称商品名称商品名称',
-						price: 123,
-						slogan: 1000
-					},
-					{
-						goods_id: 9,
-						img: '/static/img/goods/p10.jpg',
-						name: '商品名称商品名称商品名称商品名',
-						price: 186,
-						slogan: 3008
 					}
+					
 				],
 				goods: [{
 						goods_id: 0,
@@ -294,8 +267,11 @@
 				status: 'loading',
 			}
 		},
-		onLoad() {
+		onLoad(e) {
+			console.log(e);
+			this.id=e.id;
 			this.loadPromotion();
+			this.detail();
 		},
 		onPullDownRefresh() {
 			console.log('下拉了');
@@ -321,31 +297,25 @@
 			});
 		},
 		methods: {
+			detail:function(){
+				// 9095/goods/byGoodsId
+				console.log(url.getFile + "/byGoodsId")
+				uni.request({
+					// url:'http://192.168.1.103:9095/goods/byGoodsId?goodsId=1',
+					url: url.getFile + "/byGoodsId",
+					method: 'get',					
+					data: {
+						goodsId:this.id
+					},
+					success: function(res) {
+						console.log( res);	
+					
+					}
+				})
+			},
 			buy: function() {
 				var main = this;
-				// console.log(url.url+"order/creat");
-				// let fd = new FormData();
-				// fd.append('userId', 1);
-				// fd.append('userAddressId', 1);
-				// fd.append('logisticsOrderName','1');
-				// fd.append('logisticsCompany', '1');
-				// fd.append('hfDesc', "1");
-				// fd.append('id', "1");				
-				// fd.append('orderDetailStatus','1');
-				// fd.append('hfTax',"1");
-				// fd.append('purchasePrice',1);
-				// fd.append('purchaseQuantity', 1);				
-				// fd.append('distribution', "1");
-				// fd.append('payStatusorderType', "1");
-				// fd.append('amount', "1");				
-				// fd.append('hfMemo', "1");
-				// fd.append('hfRemark', "1");
-				// fd.append('payMethodName', "1");
-				// fd.append('googsId', 3);
-				// fd.append('respId', 3);
-				// fd.append('logisticsOrdersId', "1");				
-				// fd.append('hfName', params.hfName);
-				// return Axios.post("/api/product/addproduct", fd, { responseType: 'arraybuffer' });
+				
 				uni.request({
 					url: url.url + "order/creat",
 					method: 'get',
@@ -531,7 +501,7 @@
 				.swiper-content {
 					width: 100%;
 					height: 702upx;
-					background-color: aqua;
+					// background-color: aqua;
 
 					.swiper-item {
 						.swiper-img {

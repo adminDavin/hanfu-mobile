@@ -1,12 +1,13 @@
 <template>
-	<view class="goods-wrapper" @click="godetail">
-		<view class="goods-item" v-for="(goods_item,index) in goodsList" :key="index">
+	<view class="goods-wrapper" >
+		<view class="goods-item" v-for="(goods_item,index) in goodsList" :key="index" @click="godetail(index)">
 			<view class="goodsImg">
+				<!-- <image class="goods-img" :src="goods_item.img"></image> -->
 				<image class="goods-img" :src="goods_item.img"></image>
 			</view>
-			<view class="goodsTitle">{{goods_item.name}}</view>
+			<view class="goodsTitle">{{goods_item.goodName}}</view>
 			<view class="goodsPrice">
-				<text class="price">¥ {{goods_item.price}}</text>
+				<text class="price">¥ {{goods_item.sellPrice}}</text>
 				<text class="buyNum">{{goods_item.slogan}}人付款</text>
 			</view>
 
@@ -28,9 +29,10 @@
 			};
 		},
 		methods:{
-			godetail:function(){
+			godetail:function(index){
+				console.log(index);
 				uni.navigateTo({
-					url:'../product/product'
+					url:'../product/product?id='+this.goodsList[index].id
 				})
 			},
 		}

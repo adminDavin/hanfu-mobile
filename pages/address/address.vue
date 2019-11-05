@@ -1,14 +1,14 @@
 <template>
 	<view class="content b-t">
-		<view class="list b-b" v-for="(item, index) in AddressList" :key="index" @click="checkAddress(item.id)">
+		<view class="list b-b" v-for="(item, index) in addressList" :key="index" @click="checkAddress(item.id)">
 			<view class="wrapper">
-				<view class="address-box">
-					<text v-if="item.default==1" class="tag">默认</text>
-					<text class="address">{{item.province}} {{item.city}} {{item.district}} {{item.details}}</text>
+				<view class="address-box" >
+					<text v-if="item.isFaultAddress==1" class="tag">默认</text>
+					<text class="address" style="word-break: break-all;">{{item.hfConty }}{{item.hfAddressDetail }}</text>					
 				</view>
 				<view class="u-box">
-					<text class="name">{{item.consignee}}</text>
-					<text class="mobile">{{item.phone}}</text>
+					<text class="name">{{item.contact}}</text>
+					<text class="mobile">{{item.phoneNumber}}</text>
 				</view>
 			</view>
 			<text  class="yticon  icon-iconfontshanchu1" @click.stop="del(item.id)" style="color: #555555;font-size: 34upx;"></text>
@@ -24,6 +24,7 @@
 <script>
 	import eonfox from '@/js/eonfox.js';
 	import fns from '@/js/fns.js';
+		import url from '../../globel.js'
 	var ef = new eonfox();
 	export default {
 		data() {
@@ -50,7 +51,8 @@
 			}
 		},
 		onLoad(option){
-			console.log(option.source);
+			this.submit();
+			// console.log(option.source);
 			var source = option.source;
 			var _this=this;
 			if(option.source){
@@ -65,9 +67,29 @@
 			// });
 		},
 		onShow() {
-			this.load()
+			this.load();
+			this.submit();
 		},
-		methods: {
+		methods: {			
+			submit(){
+			    var _this=this;				
+				uni.request({
+			            url:url.urlAdress+"user/address/queryAddress",
+						method:'get',
+					    dataType: "JSON",
+						data:{
+							userId:2,
+							token:1
+						},
+					    success: function(res) {
+					    console.log("添加收获地址",res);
+							_this.addressList= res.data.data;
+					    }
+			
+				})
+				
+			},
+			
 			load(){
 				var that = this;
 				ef.submit({
@@ -221,20 +243,29 @@
 		flex: 1;
 	}
 	.address-box{
+		/* width: 30px; */
 		display: flex;
-		align-items: center;
+		align-items:flex-start;
 		.tag{
-			font-size: 24upx;
+			/* width: 30px; */
+			font-size: 22upx;
 			/* color: $base-color; */
 			margin-right: 10upx;
 			/* background: #fffafb; */
 			background: red;
 			border: 1px solid #ffb4c7;
 			border-radius: 4upx;
-			padding: 4upx 10upx;
+			padding: 3upx 10upx;
 			line-height: 1;
+			    font-size: 11px;
+			    background-color: red;
+			    color: #fff;
+			    /* padding: 0 9px; */
+			    /* border-radius: 12px; */
+			    /* margin-left: 10px; */
 		}
 		.address{
+			width: 87%;
 			font-size: 30upx;
 			/* color: $font-color-dark; */
 		}
