@@ -8,24 +8,23 @@
 		<view class="swiper-wrapper">
 			<view class="swiper-box">
 				<swiper class="swiper-content" :autoplay="true" :interval="3000" :circular="true" @change="changeSwiper">
-					<swiper-item class="swiper-item" v-for="imgs in swiperList" :key="imgs.id">
+					<swiper-item class="swiper-item" v-for="imgs in pics" :key="imgs.id">
 						<image class="swiper-img" :src="imgs.img"></image>
 					</swiper-item>
 				</swiper>
 				<view class="indicator">
-					<view class="dots" v-for="(swiper, index) in swiperList" :class="[currentSwiper == index ? 'on' : '']" :key="index"></view>
+					<view class="dots" v-for="(swiper, index) in pics" :class="[currentSwiper == index ? 'on' : '']" :key="index"></view>
 				</view>
 			</view>
 		</view>
 		<view style="padding: 20upx;padding-top: 0;">
 			<view style="display: flex;align-items:flex-end;margin-top: 20upx;">
 				<view style="color:#F03A3A;font-size: 32upx;font-weight: bold;">
-					¥399.00
+					¥{{detailData.sellPrice}}
 				</view>
 				<view style="text-decoration:line-through; color:#999999;font-size: 24upx;margin-left: 33upx;">¥799.00</view>
 			</view>
-			<view style="font-weight: 600;color: #333333;font-size: 30upx;font-family:PingFang SC;">此处是商品标题不打点超过两行换行显示此处是商品标题
-				不打点超过两行换行显示</view>
+			<view style="font-weight: 600;color: #333333;font-size: 30upx;font-family:PingFang SC;">{{detailData.goodsDesc}}</view>
 			<view style="color: #ccc;font-size: 26upx;margin-top: 10upx;">246人已购</view>
 
 		</view>
@@ -216,7 +215,9 @@
 		},
 		data() {
 			return {
-				id:'',
+				pics:{},
+				detailData:{},
+				id:0,
 				datapay:"",
 				orderId: '',
 				statusHeight: 20,
@@ -270,7 +271,7 @@
 		onLoad(e) {
 			console.log(e);
 			this.id=e.id;
-			this.loadPromotion();
+			// this.loadPromotion();
 			this.detail();
 		},
 		onPullDownRefresh() {
@@ -298,24 +299,44 @@
 		},
 		methods: {
 			detail:function(){
+				var _this=this;
 				// 9095/goods/byGoodsId
-				console.log(url.getFile + "/byGoodsId")
+				console.log(url.getFile + "/byGoodsId?goodsId="+this.id)
 				uni.request({
 					// url:'http://192.168.1.103:9095/goods/byGoodsId?goodsId=1',
-					url: url.getFile + "/byGoodsId",
+					url: url.getFile+"/byGoodsId",
 					method: 'get',					
 					data: {
 						goodsId:this.id
 					},
 					success: function(res) {
-						console.log( res);	
-					
+						console.log(res);	
+						_this.detailData=res.data.data;
+						console.log(url.getFile+"/pictures")
+						uni.request({
+							
+							// url:'http://192.168.1.103:9095/goods/byGoodsId?goodsId=1',
+							url: url.getFile+"/pictures",
+							method: 'get',					
+							data: {
+								goodsId:_this.detailData.id
+							},
+							success: function(res) {
+								console.log(res);	
+								_this.pics=res.data.data;									
+								for(var i=0;i< _this.pics.length;i++){
+									_this.pics[i].img= url.getFile+'/getFile?fileId='+_this.pics[i].fileId
+								}
+								console.log(_this.pics)
+								// _this.detailData=res.data.data;
+							}
+						})																				
 					}
 				})
 			},
 			buy: function() {
 				var main = this;
-				
+				console.log(111,url.url + "order/creat");
 				uni.request({
 					url: url.url + "order/creat",
 					method: 'get',
@@ -329,7 +350,7 @@
 						logisticsOrdersId: 1,
 						logisticsCompany: 1,
 						hfDesc: 1,
-						id: 169,
+						// id: 169,
 						// orderDetailStatus: 1,
 						hfTax: 1,
 						purchasePrice: 1,
@@ -348,41 +369,41 @@
 						console.log("提交订单1", res);
 						main.orderId = res.data.data[0].ordersId;
 						console.log(main.orderId)
-						if (res.statusCode == 200) {
-							uni.request({
-								url: url.urlPay + "payment/pay",
-								method: 'get',
-								dataType: "JSON",
-								data: {
-									orderId: main.orderId,
-									bossId: 1,
-									Amount: 1
-								},
-								success: function(res) {
-									console.log("提交订单2", res);
-									main.datapay= res.data.data;
+						// if (res.statusCode == 200) {
+						// 	uni.request({
+						// 		url: url.urlPay + "payment/pay",
+						// 		method: 'get',
+						// 		dataType: "JSON",
+						// 		data: {
+						// 			orderId: main.orderId,
+						// 			bossId: 1,
+						// 			Amount: 1
+						// 		},
+						// 		success: function(res) {
+						// 			console.log("提交订单2", res);
+						// 			main.datapay= res.data.data;
 									
-									// main.datapay= JSON.parse(main.datapay)
-									// console.log(main.datapay)
-									// if(res.data.status==200){
+						// 			// main.datapay= JSON.parse(main.datapay)
+						// 			// console.log(main.datapay)
+						// 			// if(res.data.status==200){
 
-									// }
-									console.log(main.datapay);
-									uni.requestPayment({
-									    provider: 'alipay',
-									    orderInfo: main.datapay, //微信、支付宝订单数据
-									    success: function (res) {
-									        console.log('success:' + JSON.stringify(res));
-									    },
-									    fail: function (err) {
-									        console.log('fail:' + JSON.stringify(err));
-									    }
-									});
+						// 			// }
+						// 			console.log(main.datapay);
+						// 			// uni.requestPayment({
+						// 			//     provider: 'alipay',
+						// 			//     orderInfo: main.datapay, //微信、支付宝订单数据
+						// 			//     success: function (res) {
+						// 			//         console.log('success:' + JSON.stringify(res));
+						// 			//     },
+						// 			//     fail: function (err) {
+						// 			//         console.log('fail:' + JSON.stringify(err));
+						// 			//     }
+						// 			// });
 
-								}
+						// 		}
 
-							})
-						}
+						// 	})
+						// }
 					}
 				})
 			},

@@ -6,7 +6,7 @@
 		<view style="padding: 10upx;position: fixed;top: 0;width: 97%;background: #fff;z-index: 100;" @click="tosearch" >
 			<view style="display: flex;align-items: center;border:1upx solid #ccc;height: 60upx;border-radius: 15px;">
 				<image src="../../static/img/sousuo_1.png" mode="" style="width: 42upx;height: 42upx;margin-left: 17upx;"></image>
-				<input type="text" placeholder="请输入您要搜索的关键词" style="width: 85%;text-align: center;" placeholder-class="csp">
+				<input type="text"   v-model="seachVal"  placeholder="请输入您要搜索的关键词" style="width: 85%;text-align: center;" placeholder-class="csp">
 			</view>
 		</view>
 
@@ -34,7 +34,7 @@
 			<view class="goodsList-wrapper">
 				<view class="title1" style="font-size: 31upx;font-weight: bold;margin-bottom: 19upx;margin-top: 18upx;"  >龙年限定</view>
 				<view class="goodsBox" >
-					<goods-list :goodsList="rcommendData"  ></goods-list>
+					<goods-list :goodsList="rcommendData" ></goods-list>
 				</view>
 			</view>
 			<!-- 龙年限定 -->
@@ -68,10 +68,11 @@
 		components: {
 			goodsList,
 			uniLoadMore
-
+			
 		},
 		data() {
 			return {
+				seachVal:'',
 				typeData:[],
 				rcommendData:[],
 				pic:[],
@@ -156,6 +157,7 @@
 			//分类
 			type:function() {
 				var main = this;
+				console.log(url.getType+"/listCategory")
 				uni.request({
 					url: url.getType+"/listCategory",
 					method: 'get',
@@ -167,13 +169,14 @@
 						// for(var i=0;i<main.typeData.length;i++){
 						// 	main.rcommendData[i].img=url.producut+'/getFile?fileId='+main.pic[i].fileId;
 						// }
-						console.log(main.pic)
+						console.log(main.pic);
 					}
 				})
 			},
 			// 轮播图
 			productPic: function() {
 				var main = this;
+				console.log(url.product + "/findAllPicture")
 				uni.request({
 					url: url.product + "/findAllPicture",
 					method: 'get',
@@ -223,7 +226,7 @@
 					}
 				})
 			},
-			tosearch:function(){
+			tosearch:function(search){
 				uni.navigateTo({
 					url:'../search/search'
 				})

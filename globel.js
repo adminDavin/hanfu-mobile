@@ -1,5 +1,5 @@
-const url ="http://192.168.1.101:8082/";
-const urlPay ="http://192.168.1.101:8082/";
+const url ="http://192.168.1.101:9097/";
+const urlPay ="http://192.168.1.101:9098/";
 const urlAdress="http://192.168.1.101:8082/";
 const urlProduct="http://192.168.1.233:9100/";
 const product="http://192.168.1.103:9100/goods";//轮播图 
