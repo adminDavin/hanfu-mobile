@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<zy-search :is-focus="false" :is-block="true" :show-want="false"></zy-search>
+		<zy-search :is-focus="false" :is-block="true" :show-want="false" ></zy-search>
 	</view>
 </template>
 

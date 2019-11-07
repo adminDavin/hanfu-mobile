@@ -32,7 +32,7 @@
 			godetail:function(index){
 				console.log(index);
 				uni.navigateTo({
-					url:'../product/product?id='+this.goodsList[index].id
+					url:'../goods/goods?id='+this.goodsList[index].id
 				})
 			},
 		}

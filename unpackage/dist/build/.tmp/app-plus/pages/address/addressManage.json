@@ -1,4 +1,5 @@
 {
+  "navigationBarTitleText": "添加收获地址",
   "usingComponents": {
     "mpvue-city-picker": "/pages/mpvue-citypicker/mpvueCityPicker"
   }

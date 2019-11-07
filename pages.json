@@ -276,6 +276,76 @@
 
 			}
 		}
+		, {
+			"path": "pages/list1/list",
+			"style": {
+				"navigationBarTitleText": "添加收获地址",
+				"app-plus": {
+
+
+					
+				}
+
+			}
+		}
+		,{
+		    "path" : "pages/goods/ratings/ratings",
+		    "style" : {
+				"navigationBarTitleText":"商品评论",
+				"enablePullDownRefresh": true,
+				"onReachBottomDistance":50,
+				"backgroundColorTop":"#ffffff",
+				"backgroundColorBottom":"#ffffff"
+			}
+		},
+		{
+			"path": "pages/list1/product",
+			"style": {
+				"navigationBarTitleText": "添加收获地址",
+				"app-plus": {
+
+
+					
+				}
+
+			}
+		},
+		
+		{
+		    "path" : "pages/goods/goods-list/goods-list1",
+		    "style" : {
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh": true,
+				"app-plus": {
+					"bounce":"none"
+				}
+			}
+		},
+		{
+		    "path" : "pages/goods/goods-list/goods-list",
+		    "style" : {
+				"navigationBarTitleText" : "",
+				"enablePullDownRefresh": true,
+				"app-plus": {
+					"bounce":"none"
+				}
+			}
+		},
+		{
+		    "path" : "pages/goods/goods",
+		    "style" : {
+				"navigationBarTitleText" : "",
+				"navigationBarBackgroundColor":"#f1f1f1",
+				"onReachBottomDistance":50,
+				"h5":{
+					"titleNView":false
+				},
+				"app-plus": {
+					"titleNView": false ,//禁用原生导航栏
+					"bounce":"none"
+				}
+			}
+		}
 	],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

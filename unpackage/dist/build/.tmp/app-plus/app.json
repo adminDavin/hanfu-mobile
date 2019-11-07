@@ -27,7 +27,13 @@
     "pages/tixian/tixian",
     "pages/pai/pai",
     "pages/address/address",
-    "pages/address/addressManage"
+    "pages/address/addressManage",
+    "pages/list1/list",
+    "pages/goods/ratings/ratings",
+    "pages/list1/product",
+    "pages/goods/goods-list/goods-list1",
+    "pages/goods/goods-list/goods-list",
+    "pages/goods/goods"
   ],
   "window": {
     "navigationBarTextStyle": "black",
@@ -54,10 +60,10 @@
         "text": "分类"
       },
       {
-        "pagePath": "pages/freeQuan/freeQuan",
+        "pagePath": "pages/tabBar/cart/cart",
         "iconPath": "static/img/tabBar/category.png",
         "selectedIconPath": "static/img/tabBar/category-on.png",
-        "text": "分类"
+        "text": "购物车"
       },
       {
         "pagePath": "pages/tabBar/user/user",

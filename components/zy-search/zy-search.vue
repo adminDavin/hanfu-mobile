@@ -8,7 +8,7 @@
 				<input maxlength="20" focus type="text" value="" confirm-type="search" @confirm="searchStart()" placeholder="请输入关键词搜索" v-model.trim="searchText"/>
 			</template>
 			<template v-else>
-				<input maxlength="20" type="text" value="" confirm-type="search" @confirm="searchStart()" placeholder="请输入关键词搜索" v-model.trim="searchText"/>
+				<input maxlength="20" type="text" value="" confirm-type="search" @confirm="searchStart()"  placeholder="请输入关键词搜索" v-model.trim="searchText"/>
 			</template>
 			<image src="../../static/zy-search/search.svg" mode="aspectFit" @click="searchStart()" class="search-icon"></image>
 		</view>
@@ -76,6 +76,9 @@
 		methods: {
 			searchStart: function() {	//触发搜索
 				let _this = this;
+				uni.navigateTo({
+					url:'../../pages/goods/goods-list/goods-list?name='+_this.searchText
+				})
 				if (_this.searchText == '') {
 					uni.showToast({
 						title: '请输入关键字',
@@ -84,6 +87,7 @@
 					});
 					return false;
 				}else{
+					
 					uni.getStorage({
 						key:'search_cache',
 						success(res){
@@ -110,6 +114,8 @@
 								key: 'search_cache',
 								data: _this.hList
 							});
+							
+							
 						},
 						fail() {
 							_this.hList = [];

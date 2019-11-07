@@ -24,7 +24,7 @@
 		</view>
 		<!-- 分类列表 -->
 		<view class="category-wrapper">
-			<view class="category-content" v-for="categorys in typeData" :key="categorys.id">
+			<view class="category-content" v-for="categorys in typeData" :key="categorys.id"  @click="goCategory(categorys.id,categorys.hfName)">
 				<!-- <image class="category-img" :src="categorys.img"></image> -->
 				<text class="category-name">{{categorys.hfName}}</text>
 			</view>
@@ -32,7 +32,7 @@
 		<view style="background:rgba(245,245,245,1);padding-top: 19upx;">
 			<!-- 龙年限定 -->
 			<view class="goodsList-wrapper">
-				<view class="title1" style="font-size: 31upx;font-weight: bold;margin-bottom: 19upx;margin-top: 18upx;"  >龙年限定</view>
+				<view class="title1" style="font-size: 31upx;font-weight: bold;margin-bottom: 19upx;margin-top: 18upx;"  >{{year}}年限定</view>
 				<view class="goodsBox" >
 					<goods-list :goodsList="rcommendData" ></goods-list>
 				</view>
@@ -72,6 +72,7 @@
 		},
 		data() {
 			return {
+				year:'',
 				seachVal:'',
 				typeData:[],
 				rcommendData:[],
@@ -134,6 +135,7 @@
 		mounted() {
 			this.type();
 			this.productPic();
+			this.long();
 			// this.productList();
 			this.recommend();
 			console.log(url.url)
@@ -154,6 +156,31 @@
 			});
 		},
 		methods: {
+			goCategory:function(id,name){
+				uni.navigateTo({
+					url:'../goods/goods-list/goods-list1?name='+name+'&id='+id
+				})
+			},
+			// 龙年限定
+			long:function() {
+				var main = this;
+				console.log(url.getType+"/getYear")
+				uni.request({
+					url: url.getType+"/getYear",
+					method: 'get',
+					// dataType: "JSON",
+					
+					success: function(res) {
+						console.log("龙年限定", res);	
+						main.year= res.data.data;
+						// main.typeData= res.data.data;
+						// for(var i=0;i<main.typeData.length;i++){
+						// 	main.rcommendData[i].img=url.producut+'/getFile?fileId='+main.pic[i].fileId;
+						// }
+						// console.log(main.pic);
+					}
+				})
+			},
 			//分类
 			type:function() {
 				var main = this;
